@@ -1,0 +1,175 @@
+1)Primer codigo 
+
+#include <stdio.h> 
+
+  
+
+int main() { 
+
+int matriz[3][2]; 
+
+int i, j; 
+
+  
+
+printf("Ingrese 6 numeros:\n"); 
+
+  
+
+for(i = 0; i < 3; i++) { 
+
+for(j = 0; j < 2; j++) { 
+
+printf("matriz[%d][%d]: ", i, j); 
+
+scanf("%d", &matriz[i][j]); 
+
+} 
+
+} 
+
+  
+
+printf("\nMatriz 3x2:\n"); 
+
+  
+
+for(i = 0; i < 3; i++) { 
+
+for(j = 0; j < 2; j++) { 
+
+printf("%d ", matriz[i][j]); 
+
+} 
+
+printf("\n"); 
+
+} 
+
+  
+
+return 0; 
+
+} 
+
+2) Matriz tridimensional 
+
+# Matriz tridimensional 2x3x2 
+
+matriz3d = [ 
+
+[ 
+
+[1, 2], 
+
+[3, 4], 
+
+[5, 6] 
+
+], 
+
+[ 
+
+[7, 8], 
+
+[9, 10], 
+
+[11, 12] 
+
+] 
+
+] 
+
+  
+
+print("Matriz tridimensional:") 
+
+for capa in matriz3d: 
+
+print(capa) 
+
+ 
+
+3) Tabla de verdad AND 
+
+# Tabla de verdad AND almacenada en una matriz 
+
+and_table = [ 
+
+[0, 0, 0], 
+
+[0, 1, 0], 
+
+[1, 0, 0], 
+
+[1, 1, 1] 
+
+] 
+
+  
+
+print("TABLA DE VERDAD AND") 
+
+print("A B | A AND B") 
+
+for fila in and_table: 
+
+print(f"{fila[0]} {fila[1]} | {fila[2]}") 
+
+ 
+
+Salida: 
+
+TABLA DE VERDAD AND 
+
+A B | A AND B 
+
+0 0 | 0 
+
+0 1 | 0 
+
+1 0 | 0 
+
+1 1 | 1 
+
+4) Tabla de verdad OR 
+
+# Tabla de verdad OR almacenada en una matriz 
+
+or_table = [ 
+
+[0, 0, 0], 
+
+[0, 1, 1], 
+
+[1, 0, 1], 
+
+[1, 1, 1] 
+
+] 
+
+  
+
+print("TABLA DE VERDAD OR") 
+
+print("A B | A OR B") 
+
+for fila in or_table: 
+
+print(f"{fila[0]} {fila[1]} | {fila[2]}") 
+
+ 
+
+salida 
+
+TABLA DE VERDAD OR 
+
+A B | A OR B 
+
+0 0 | 0 
+
+0 1 | 1 
+
+1 0 | 1 
+
+1 1 | 1 

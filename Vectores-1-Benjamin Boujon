@@ -1,0 +1,27 @@
+1- Crear un código en C que le permita al usuario modificar los datos de un vector y luego que el programa imprima los datos 1 por 1.
+#include <stdio.h>
+
+#define N 5
+
+int main() {
+    int vector[N] = {10, 20, 30, 40, 50};
+    int i;
+
+    printf("Vector original:\n");
+    for (i = 0; i < N; i++) {
+        printf("Posicion %d: %d\n", i, vector[i]);
+    }
+
+    printf("\nIngrese los nuevos datos del vector:\n");
+    for (i = 0; i < N; i++) {
+        printf("Dato [%d]: ", i);
+        scanf("%d", &vector[i]);
+    }
+
+    printf("\nDatos del vector, uno por uno:\n");
+    for (i = 0; i < N; i++) {
+        printf("Posicion %d: %d\n", i, vector[i]);
+    }
+
+    return 0;
+}

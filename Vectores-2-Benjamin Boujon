@@ -1,0 +1,23 @@
+2- Crear un código que una vez indicados los datos que almacena un vector, sume todos sus datos y los imprima.
+-Una vez realizado, calcule el promedio de esos datos.
+#include <stdio.h>
+#define N 5
+int main() {
+int vector[N];
+int i, suma = 0;
+float promedio;
+for (i = 0; i < N; i++) {
+printf("Ingrese el dato [%d]: ", i);
+scanf("%d", &vector[i]);
+}
+for (i = 0; i < N; i++) {
+suma += vector[i];
+}
+printf("
+La suma de los datos es: %d
+", suma);
+promedio = (float)suma / N;
+printf("El promedio de los datos es: %.2f
+", promedio);
+return 0;
+}

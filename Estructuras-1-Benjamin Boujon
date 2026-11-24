@@ -1,0 +1,38 @@
+1- Definir una estructura de datos que contenga el nombre de un alumno, edad y año al que pertenece. Luego, que el código imprima esos datos. 
+
+- Hacer que el usuario pueda modificar esos datos y luego que imprima esos datos modificados por el usuario. 
+
+#include <stdio.h>
+
+struct Alumno {
+    char nombre[50];
+    int edad;
+    int anio;
+};
+
+void imprimirAlumno(struct Alumno a) {
+    printf("Nombre: %s\n", a.nombre);
+    printf("Edad: %d\n", a.edad);
+    printf("Anio: %d\n", a.anio);
+}
+
+int main() {
+    struct Alumno alumno = {"Juan Perez", 15, 3};
+
+    printf("Datos del alumno:\n");
+    imprimirAlumno(alumno);
+
+    printf("\nIngrese los nuevos datos:\n");
+    printf("Nombre: ");
+    scanf(" %49[^\n]", alumno.nombre);
+    printf("Edad: ");
+    scanf("%d", &alumno.edad);
+    printf("Anio: ");
+    scanf("%d", &alumno.anio);
+
+    printf("\nDatos modificados:\n");
+    imprimirAlumno(alumno);
+
+    return 0;
+}
+

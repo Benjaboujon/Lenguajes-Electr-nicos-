@@ -1,0 +1,51 @@
+DESAFÍO PEDRO OLIVA: (STRINGS) 
+
+Revisite un código de clases previas donde le solicite al usuario escribir 1 o 0 para continuar y reemplácelo por "continuar" o "finalizar", en caso de que el usuario escriba algo diferente envíe un mensaje de ERROR.
+
+Ingrese a Github y cargue todos sus códigos al repositorio porque usted oficialmente finalizó los códigos de 5to año TEL Lenguajes Electrónicos!!!!!!!
+#include <stdio.h>
+#include <string.h>
+
+#define N 5
+
+int main() {
+    int vector[N];
+    int i, pos;
+    char respuesta[20];
+    int seguir = 1;
+
+    for (i = 0; i < N; i++) {
+        printf("Ingrese el dato [%d]: ", i);
+        scanf("%d", &vector[i]);
+    }
+
+    while (seguir) {
+        printf("\nQue posicion desea consultar (0 a %d)? ", N - 1);
+        scanf("%d", &pos);
+
+        if (pos >= 0 && pos < N) {
+            printf("El dato en la posicion %d es: %d\n", pos, vector[pos]);
+        } else {
+            printf("Posicion invalida.\n");
+        }
+
+        /* Se repite hasta recibir una respuesta valida */
+        int valida = 0;
+        while (!valida) {
+            printf("Escriba \"continuar\" o \"finalizar\": ");
+            scanf("%19s", respuesta);
+
+            if (strcmp(respuesta, "continuar") == 0) {
+                valida = 1;
+            } else if (strcmp(respuesta, "finalizar") == 0) {
+                valida = 1;
+                seguir = 0;
+            } else {
+                printf("ERROR: opcion no valida.\n");
+            }
+        }
+    }
+
+    printf("\nPrograma finalizado.\n");
+    return 0;
+}

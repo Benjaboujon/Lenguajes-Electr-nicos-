@@ -1,0 +1,79 @@
+
+DESAFÍO PEDRO OLIVA: (VECTORES)
+Realizar un código que le permita al usuario ingresar valores en un vector de tamaño 5, luego, que el usuario pueda acceder a cada uno de esos valores, modificarlos e imprimirlos tantas veces quiera.
+#include <stdio.h>
+#define N 5
+void imprimirVector(int v[], int n) {
+int i;
+printf("
+Contenido del vector:
+");
+for (i = 0; i < n; i++) {
+printf("Posicion %d: %d
+", i, v[i]);
+}
+}
+int main() {
+int vector[N];
+int i, pos, opcion;
+printf("Ingrese los %d valores del vector:
+", N);
+for (i = 0; i < N; i++) {
+printf("Valor [%d]: ", i);
+scanf("%d", &vector[i]);
+}
+do {
+printf("
+===== MENU =====
+");
+printf("1. Ver un valor
+");
+printf("2. Modificar un valor
+");
+printf("3. Imprimir todo el vector
+");
+printf("4. Salir
+");
+printf("Elija una opcion: ");
+scanf("%d", &opcion);
+switch (opcion) {
+case 1:
+printf("Posicion a consultar (0 a %d): ", N - 1);
+scanf("%d", &pos);
+if (pos >= 0 && pos < N) {
+printf("El valor en la posicion %d es: %d
+", pos, vector[pos]);
+} else {
+printf("Posicion invalida.
+");
+}
+break;
+case 2:
+printf("Posicion a modificar (0 a %d): ", N - 1);
+scanf("%d", &pos);
+if (pos >= 0 && pos < N) {
+printf("Valor actual: %d
+", vector[pos]);
+printf("Nuevo valor: ");
+scanf("%d", &vector[pos]);
+printf("Valor modificado correctamente.
+");
+} else {
+printf("Posicion invalida.
+");
+}
+break;
+case 3:
+imprimirVector(vector, N);
+break;
+case 4:
+printf("Programa finalizado.
+");
+break;
+default:
+printf("Opcion invalida.
+");
+}
+} while (opcion != 4);
+return 0;
+}
